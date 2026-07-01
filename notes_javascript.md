@@ -1,0 +1,3 @@
+# JavaScript
+
+### Function vs Method 
