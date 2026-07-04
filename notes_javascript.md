@@ -33,29 +33,121 @@ function vs method
 - does this allow the loop to run from top to bottom or vice versa?
 - what is the syntax for `for` loop?
 
-```
+> syntax
 
 ```
-
-
+for (begin; condition; step) {
+    // loop body
+}
+```
+- can the syntax also be written as follows?
+```
+for (initialization; condition; incremeant) {
+    // loop body
+}
+```
 
 examples ⤵
 
-★ countup from 0 to 10
+> ★ count from 0 to (but not including) 3
+```
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+}
+```
+| part | description |
+| ----------- | ----------- |
+| begin | let i = 0 |
+| condition | i < 3 |
+| body | console.log(i) |
+| step | i++|
+
+- how does the general loop algorithm work?
+
+```
+run begin 
+→ (if condition → run body and run step)
+→ (if condition → run body and run step)
+→ (if condition → run body and run step)
+→ ...
+```
+
+- does it mean that `begin` executes at once?
+- and then it iterates?
+- when are `body` and `step` executed?
+- are they executed after each `condition` test?
+
+*-*-*-*
+
+- what is called an "inline" variable declaration?
+- when the "counter" variable is declared inside the loop, is it called "inline" variable declation? (see examples)
+
+```
+for (let i = 0; i < 3; i++) {
+  alert(i); // 0, 1, 2
+}
+alert(i); // error, no such variable
+```
+- what is the solution for this?
+- could you instead of defining a variable use an existing one?
+
+```
+let i = 0;
+for (i = 0; i < 3; i++) {
+    console.log(i);         // 0 1 2
+}
+
+console.log(i);             // 3
+```
+- why is the 3 visible?
+- is it visible cause `i = 3` when the loop stopped?
+- is that why when we `console.log(i)` outside of the loop it shows us `3`?
+
+
+
+>★ countup from 0 to 10
 ```
 for (let i = 0; i <=10; i++) {
     console.log(i);
 }
 ```
-★ countdown from 10 to 0
+>★ countdown from 10 to 0
 ```
 for (i = 10; i >= 0; i--) {
     console.log(i);
 }
 ```
-★ 
+
+- can we skip parts of the `for` loop?
+- can we omit the `begin` part?
+
+
 ```
+let i = 0;
+for (; i < 3; i++) {
+    console.log(i);
+}
 ```
+
+- can we also remove the `step` part?
+- doing so, does it make it identical to `while` loop?
+- meaning `while(i < 3)`?
+
+```
+let i = 0;
+for (; i < 3; ) {
+    console.log(i++);
+}
+```
+
+- can we also remove everthing, creating an infinite loop?
+```
+let i = 0;
+for (;;) {
+    console.log(i);
+}
+```
+
 
 
 ### `for...of` loop

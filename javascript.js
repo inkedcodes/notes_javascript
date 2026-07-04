@@ -84,9 +84,3 @@ for (const person of people) {
         console.log(`Admit: ${person}`);
     }
 }
-
-let i = 0;
-while (i < 3) {
-    console.log(i);
-    i++;
-}
