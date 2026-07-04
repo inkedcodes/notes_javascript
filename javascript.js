@@ -81,5 +81,10 @@ for (const person of people) {
     }
 }
 
-
-
+for (i = 0; i < 10; i++) {
+    if (i > 5) {
+        console.log(i);
+    } else {
+        continue;
+    }
+}

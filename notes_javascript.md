@@ -386,6 +386,10 @@ for (let i = 0; i < 10; i++) {
 - from a technical pov are both identical?
 - does the 2nd eg create another lvl of nesting?
 
+#### not related to continue 
+- why does `i % 2` give you odd numbers?
+- does it give you odd numbers because the value is `0` and it is falsy so the `console.log()` does not return any value and moves on to the next value 
+
 
 > ★ output only even number
 ```
@@ -397,7 +401,31 @@ for (; i < 10; i++) {
 }
 ```
 
+### break/continue on the right side of '?'
+- what can not be used with the ternary operator '?'
+- can it not be used with syntax constructs? 
+- syntax constructs that are not expressions?
+- are derivatives such as `break/continue` allowed? --- no
 
+```
+for (i = 0; i < 10; i++) {
+    if (i > 5) {
+        console.log(i);
+    } else {
+        continue;
+    }
+}
+```
+
+<mark>-can you write the above code as follows? --- no.<mark>
+- what does this cause?
+- does this cause a syntax error?
+
+```
+(i > 5) ? alert(i) : continue;
+```
+
+### labels 
 
 
 
