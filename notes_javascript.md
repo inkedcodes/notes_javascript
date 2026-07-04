@@ -425,8 +425,62 @@ for (i = 0; i < 10; i++) {
 (i > 5) ? alert(i) : continue;
 ```
 
-### labels 
+### labels for `break/continue`
+- do we sometimes need to break out of multiple nested loops?
 
+```
+for (let i = 0; i < 3; i++) {
+
+  for (let j = 0; j < 3; j++) {
+
+    let input = prompt(`Value at coords (${i},${j})`, '');
+    console.log(i,j);
+  }
+}
+
+console.log('Done!');
+```
+- does the process stop when the user cancels the input? --- no 
+- would the ordinary `break` after input only break the inner loop?
+- what should we use instead?
+- should we use labels?
+- what is label?
+- is label an identifier with a colon before the loop?
+
+```
+labelName: for (...) {
+
+}
+```
+
+```
+outer: for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        let input = prompt(`Value at coords (${i},${j})`, '');
+        if (!input) break outer;
+        console.log(i,j);
+    }
+} 
+console.log("Done!");
+```
+- how does the above code break out the loop?
+- does `break outer` look upwards to the label named `outer:` and breaks out of the loop?
+- can we also move the `outer` label to a new line?
+
+```
+outer:
+for (let i = 0; i < 3; i++) { ... }
+```
+
+- can the `continue` deravative also be used with a label?
+- does `label` allow us to jump into an arbitary place in the code? --- no
+- is the below code possible? --- no
+
+```
+break label; // jump to the label below (doesn't work)
+
+label: for (...)
+```
 
 
 ## exercises 
@@ -453,3 +507,18 @@ for (const person of people) {
 }
 
 ```
+
+### tasks from [javascript.info](javascript.infor/while-for)
+> 02
+```
+let i = 0;
+while(++i < 5) alert(i);
+```
+the above code outputs the value of 1 2 3 4 
+
+```
+let i = 0;
+while (i++ < 5) alert( i );
+```
+the above code outputs the value of 1 2 3 4 
+

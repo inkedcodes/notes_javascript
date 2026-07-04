@@ -81,10 +81,11 @@ for (const person of people) {
     }
 }
 
-for (i = 0; i < 10; i++) {
-    if (i > 5) {
-        console.log(i);
-    } else {
-        continue;
+outer: for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        let input = prompt(`Value at coords (${i},${j})`, '');
+        if (!input) break outer;
+        console.log(i,j);
     }
-}
+} 
+console.log("Done!");
