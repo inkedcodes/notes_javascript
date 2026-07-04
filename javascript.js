@@ -60,10 +60,6 @@ for (const cat of cats) {
 
 
 
-
-
-
-
 const people = [
   "Chris",
   "Anne",
@@ -84,3 +80,6 @@ for (const person of people) {
         console.log(`Admit: ${person}`);
     }
 }
+
+
+

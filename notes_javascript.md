@@ -337,3 +337,91 @@ do {
     i--;
 } while (i >= 0);
 ```
+
+### breaking the loop
+
+- when does a loop exit, normally?
+- does it exit when its condition becomes falsy?
+
+```
+let sum = 0;
+while (true) {
+    let value = +prompt("enter a number", '');
+    if (!value) break;
+    sum += value;
+    console.log(sum);
+}
+
+console.log("Sum: " + sum);
+```
+- what is the combination "infinite loop + `break`" useful for?
+- is it useful for when a loops condition must be checked not at the beginning or end of the loop, but in the middle or even in several places of its body?
+
+### continue 
+- is `continue` a lighter version of `break`?
+- does it stop the whole loop? --- no 
+- does it instead stop the current iteration and forces the loop to start a new one?
+- when would you use it?
+- would you use it when we're done with the current iteration and would like to move on to the next one?
+
+> ★ output only odd number
+```
+for (let i = 0; i < 10; i++) {
+    
+    if (i % 2 === 0) continue;
+    console.log(i);
+}
+```
+
+```
+for (let i = 0; i < 10; i++) {
+
+  if (i % 2) {
+    console.log(i);
+  }
+
+}
+```
+- what is the diff between the above 2 egs of "output only odd number"?
+- from a technical pov are both identical?
+- does the 2nd eg create another lvl of nesting?
+
+
+> ★ output only even number
+```
+let i = 0;
+for (; i < 10; i++) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
+```
+
+
+
+
+
+## exercises 
+```
+const people = [
+  "Chris",
+  "Anne",
+  "Colin",
+  "Terri",
+  "Phil",
+  "Lola",
+  "Sam",
+  "Kay",
+  "Bruce",
+];
+
+
+for (const person of people) {
+    if ((person === "Phil") || (person === "Lola")) {
+        console.log(`Refuse: ${person}`);
+    } else {
+        console.log(`Admit: ${person}`);
+    }
+}
+
+```
