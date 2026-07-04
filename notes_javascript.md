@@ -31,13 +31,13 @@ function vs method
 - will it each time increament a counter until the counter no longer satisfies a given condition?
 - does the counter with each increment, increase or decrease the counter?
 - does this allow the loop to run from top to bottom or vice versa?
+- what is the syntax for `for` loop?
 
-syntax ⤵
 ```
-for (variable of iterabel) {
-    // code block to be executed
-}
+
 ```
+
+
 
 examples ⤵
 
@@ -59,7 +59,14 @@ for (i = 10; i >= 0; i--) {
 
 
 ### `for...of` loop
-examples ⤵
+
+> syntax ⤵
+```
+for (variable of iterable) {
+    // code block to be executed
+}
+```
+> examples ⤵
 
 ```
 const cats = ["lion", "tiger", "serval", "leopard", "jaguar"];
@@ -194,9 +201,37 @@ while (i >= 0) {
 
 ### `do...while`
 
+- can the condition check be moved below the loop body?
+- do you have to use `do...while` loop for that?
+- what is the syntax for it?
+
+> syntax
+```
+do {
+    // loop body
+} while (condition)
+```
+- how does `do...while` work?
+- does it loop first execute the body?
+- does it then check the conditon?
+- if it is truthy does it execute it again and again?
+
+```
+let i = 0;
+do {
+    console.log(i);
+    i++
+} while(i < 3);
+```
+
+- when should you use `do...while`?
+- should you use it when you want the loop body to execute at least once, regardless of the condition being truthy?
+- what is the other preferred loop?
+- is it `while` loop?
+
 examples ⤵
 
-★ countdown from 0 - 10. Instead of 0 it says "Blast off!". Instead of 10 it says "Countdown 10"
+> ★ countdown from 0 - 10. Instead of 0 it says "Blast off!". Instead of 10 it says "Countdown 10"
 
 ```
 do {
