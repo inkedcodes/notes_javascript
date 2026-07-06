@@ -509,16 +509,137 @@ for (const person of people) {
 ```
 
 ### tasks from [javascript.info](javascript.infor/while-for)
+
+> 01 
+```
+let i = 3;
+
+while (i) {
+  alert( i-- );
+}
+```
+ans: `1` is the last value alerted by this code. ✅
+
 > 02
+
+prefix form: 
 ```
 let i = 0;
 while(++i < 5) alert(i);
 ```
-the above code outputs the value of 1 2 3 4 
+ans: ❌
 
+postfix form: 
 ```
 let i = 0;
 while (i++ < 5) alert( i );
 ```
-the above code outputs the value of 1 2 3 4 
+ans: ❌
 
+> 03 
+
+postfixform: 
+```
+for (let i = 0; i < 5; i++) alert(i);
+```
+
+ans: ❌
+
+prefix form: 
+
+```
+for (let i = 0; i < 5; ++i) alert( i );
+```
+
+ans: ❌
+
+> 04: output even numbers in the loop 
+
+ans: ❌
+```
+for (let i = 0; i < 12; i++) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
+```
+
+✅ 
+```
+for (let i = 2; i <= 10; i++) {
+  if (i % 2 == 0) {
+    alert( i );
+  }
+}
+```
+
+> 05: replace `for` with `while`
+
+```
+for (let i = 0; i < 3; i++) {
+  console.log( `number ${i}!` );
+}
+
+// 0 1 2 
+```
+
+ans: ❌ ✅
+```
+let i = 0;
+while (i < 3) {
+    console.log(`number ${i}!`);
+    i++;
+}
+```
+
+> 06: repeat until the input is correct 
+
+ans: 
+
+```
+let number = 1;
+
+while (true) {
+    let input = prompt("Enter a number greater than 100");
+    if ((input > 100) || (!input)) break;
+}
+```
+
+> 07: output prime numbers
+
+using `while` loop
+```
+let n = prompt("Enter a number");
+
+
+for (let i = 2; i < n; i++) {
+    let isPrime = true;
+    let divisor = 2;
+    while (divisor < i) {
+        if (i % divisor === 0) {
+            isPrime = false; 
+            break;
+        }
+        divisor++;
+    }
+    if (isPrime) console.log(i);
+}
+```
+
+using `for` loop
+
+```
+let n = prompt("Choose a number");
+
+for (let i = 2; i < n; i++) {
+    let isPrime = true; 
+     
+    for (let divisor = 2; divisor < i; divisor++) {
+        if (i % divisor === 0) {
+            isPrime = false;
+            break;
+        }
+    } 
+    if (isPrime) console.log(i);
+}
+```

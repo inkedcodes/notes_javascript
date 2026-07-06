@@ -81,11 +81,18 @@ for (const person of people) {
     }
 }
 
-outer: for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-        let input = prompt(`Value at coords (${i},${j})`, '');
-        if (!input) break outer;
-        console.log(i,j);
+let n = prompt("Enter a number");
+
+
+for (let i = 2; i < n; i++) {
+    let isPrime = true;
+    let divisor = 2;
+    while (divisor < i) {
+        if (i % divisor === 0) {
+            isPrime = false; 
+            break;
+        }
+        divisor++;
     }
-} 
-console.log("Done!");
+    if (isPrime) console.log(i);
+}
